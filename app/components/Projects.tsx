@@ -34,22 +34,26 @@ const HIGHLIGHTS = [
   {
     icon: StorefrontIcon,
     title: "POS + inventory",
-    description: "Point-of-sale checkout wired directly into live stock levels.",
+    description:
+      "Point-of-sale checkout wired directly into live stock levels.",
   },
   {
     icon: RestaurantMenuIcon,
     title: "Recipe-based tracking",
-    description: "Selling a drink deducts its recipe's ingredients automatically.",
+    description:
+      "Selling a drink deducts its recipe's ingredients automatically.",
   },
   {
     icon: CloudOffIcon,
     title: "Offline-first PWA",
-    description: "Keeps taking orders offline, syncing through IndexedDB when back online.",
+    description:
+      "Keeps taking orders offline, syncing through IndexedDB when back online.",
   },
   {
     icon: LockPersonIcon,
     title: "RBAC & auth",
-    description: "Role-based access so cashiers, managers, and admins see only what they need.",
+    description:
+      "Role-based access so cashiers, managers, and admins see only what they need.",
   },
 ];
 
@@ -223,11 +227,19 @@ export default function Projects() {
       <Container maxWidth="lg">
         <Typography
           variant="overline"
-          sx={{ color: "primary.main", fontWeight: 700, letterSpacing: "0.08em" }}
+          sx={{
+            color: "primary.main",
+            fontWeight: 700,
+            letterSpacing: "0.08em",
+          }}
         >
           Selected work
         </Typography>
-        <Typography component="h2" variant="h2" sx={{ mt: 1, fontSize: { xs: "2rem", sm: "2.5rem" } }}>
+        <Typography
+          component="h2"
+          variant="h2"
+          sx={{ mt: 1, fontSize: { xs: "2rem", sm: "2.5rem" } }}
+        >
           Projects
         </Typography>
 
@@ -245,14 +257,20 @@ export default function Projects() {
           <Box sx={{ order: { xs: 2, md: 1 } }}>
             <Typography
               variant="caption"
-              sx={{ color: "text.secondary", fontFamily: "var(--font-geist-mono), monospace" }}
+              sx={{
+                color: "text.secondary",
+                fontFamily: "var(--font-geist-mono), monospace",
+              }}
             >
               Featured project
             </Typography>
             <Typography variant="h3" sx={{ mt: 0.5, fontSize: "1.5rem" }}>
               Coffee Shop Management System
             </Typography>
-            <Typography variant="body1" sx={{ mt: 1.5, color: "text.secondary", lineHeight: 1.7 }}>
+            <Typography
+              variant="body1"
+              sx={{ mt: 1.5, color: "text.secondary", lineHeight: 1.7 }}
+            >
               A full-stack POS and inventory system for running a real coffee
               shop day to day — checkout, stock, staff access, and syncing all
               handled in one app.
@@ -260,13 +278,23 @@ export default function Projects() {
 
             <Stack spacing={1.75} sx={{ mt: 3 }}>
               {HIGHLIGHTS.map(({ icon: Icon, title, description }) => (
-                <Stack key={title} direction="row" spacing={1.5} sx={{ alignItems: "flex-start" }}>
-                  <Icon sx={{ color: "primary.main", fontSize: 20, mt: "2px" }} />
+                <Stack
+                  key={title}
+                  direction="row"
+                  spacing={1.5}
+                  sx={{ alignItems: "flex-start" }}
+                >
+                  <Icon
+                    sx={{ color: "primary.main", fontSize: 20, mt: "2px" }}
+                  />
                   <Box>
                     <Typography variant="body2" sx={{ fontWeight: 600 }}>
                       {title}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                    <Typography
+                      variant="body2"
+                      sx={{ color: "text.secondary" }}
+                    >
                       {description}
                     </Typography>
                   </Box>
@@ -276,14 +304,19 @@ export default function Projects() {
 
             <ImpactNote text={IMPACT} />
 
-            <Stack direction="row" spacing={1} useFlexGap sx={{ mt: 3, flexWrap: "wrap" }}>
+            <Stack
+              direction="row"
+              spacing={1}
+              useFlexGap
+              sx={{ mt: 3, flexWrap: "wrap" }}
+            >
               {TECH.map((tech) => (
                 <Chip key={tech} label={tech} size="small" variant="outlined" />
               ))}
             </Stack>
 
             <Button
-              href="https://github.com/Aliibrahim4p"
+              href="https://github.com/Aliibrahim4p/dreams-coffee/"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<GitHubIcon />}
@@ -295,13 +328,22 @@ export default function Projects() {
           </Box>
 
           <Box sx={{ order: { xs: 1, md: 2 }, minWidth: 0 }}>
-            <ProjectImages images={COFFEE_SHOP_IMAGES} mockLabel="mockup — not an actual screenshot" />
+            <ProjectImages
+              images={COFFEE_SHOP_IMAGES}
+              mockLabel="mockup — not an actual screenshot"
+            />
           </Box>
         </Paper>
 
         <Typography
           variant="overline"
-          sx={{ display: "block", mt: 7, color: "text.secondary", fontWeight: 700, letterSpacing: "0.08em" }}
+          sx={{
+            display: "block",
+            mt: 7,
+            color: "text.secondary",
+            fontWeight: 700,
+            letterSpacing: "0.08em",
+          }}
         >
           Other projects
         </Typography>
@@ -314,7 +356,10 @@ export default function Projects() {
                 <Typography variant="h3" sx={{ fontSize: "1.25rem" }}>
                   {project.title}
                 </Typography>
-                <Typography variant="body1" sx={{ mt: 1, color: "text.secondary", lineHeight: 1.7 }}>
+                <Typography
+                  variant="body1"
+                  sx={{ mt: 1, color: "text.secondary", lineHeight: 1.7 }}
+                >
                   {project.description}
                 </Typography>
 
@@ -326,26 +371,52 @@ export default function Projects() {
                     gap: 2,
                   }}
                 >
-                  {project.highlights.map(({ icon: Icon, title, description }) => (
-                    <Stack key={title} direction="row" spacing={1.5} sx={{ alignItems: "flex-start" }}>
-                      <Icon sx={{ color: "primary.main", fontSize: 20, mt: "2px" }} />
-                      <Box>
-                        <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                          {title}
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                          {description}
-                        </Typography>
-                      </Box>
-                    </Stack>
-                  ))}
+                  {project.highlights.map(
+                    ({ icon: Icon, title, description }) => (
+                      <Stack
+                        key={title}
+                        direction="row"
+                        spacing={1.5}
+                        sx={{ alignItems: "flex-start" }}
+                      >
+                        <Icon
+                          sx={{
+                            color: "primary.main",
+                            fontSize: 20,
+                            mt: "2px",
+                          }}
+                        />
+                        <Box>
+                          <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                            {title}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{ color: "text.secondary" }}
+                          >
+                            {description}
+                          </Typography>
+                        </Box>
+                      </Stack>
+                    ),
+                  )}
                 </Box>
 
                 <ImpactNote text={project.impact} />
 
-                <Stack direction="row" spacing={1} useFlexGap sx={{ mt: 3, flexWrap: "wrap" }}>
+                <Stack
+                  direction="row"
+                  spacing={1}
+                  useFlexGap
+                  sx={{ mt: 3, flexWrap: "wrap" }}
+                >
                   {project.tech.map((tech) => (
-                    <Chip key={tech} label={tech} size="small" variant="outlined" />
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      size="small"
+                      variant="outlined"
+                    />
                   ))}
                 </Stack>
 
