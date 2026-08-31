@@ -13,13 +13,22 @@ import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import SyncIcon from "@mui/icons-material/Sync";
 import GroupsIcon from "@mui/icons-material/Groups";
 import StorageIcon from "@mui/icons-material/Storage";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import EmailIcon from "@mui/icons-material/Email";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import LayersIcon from "@mui/icons-material/Layers";
+import ProjectImages from "./ProjectImages";
 
 const TECH = ["Next.js", "Prisma", "PostgreSQL", "IndexedDB", "PWA"];
+
+const IMPACT =
+  "Built to replace three separate coffee-shop tools — till, stock sheet, and staff roster — with one system that runs the shop day to day, online or offline.";
 
 const HIGHLIGHTS = [
   {
@@ -49,7 +58,10 @@ const OTHER_PROJECTS = [
     title: "Broadcast Recording & Monitoring System",
     description:
       "A PHP recording pipeline built for a local broadcasting company — captures live broadcasts, watches for dropped recordings, and keeps the company in the loop automatically.",
+    impact:
+      "Replaced a fully manual, all-day broadcast-monitoring workflow — saving the company 4+ hours daily and producing a complete server-side archive.",
     tech: ["PHP", "FFmpeg"],
+    images: [] as { src: string; alt: string }[],
     highlights: [
       {
         icon: VideocamIcon,
@@ -70,10 +82,10 @@ const OTHER_PROJECTS = [
           "Sends the company real-time alerts on recording status and issues.",
       },
       {
-        icon: AccessTimeIcon,
-        title: "4+ hours saved daily",
+        icon: LayersIcon,
+        title: "Handles 10+ concurrent recordings",
         description:
-          "Replaced manual broadcast tracking, saving the company over 4 hours a day while archiving every recording on the server.",
+          "Runs 10+ simultaneous broadcast recordings without dropping frames or missing archives.",
       },
     ],
   },
@@ -81,8 +93,16 @@ const OTHER_PROJECTS = [
     title: "Contact Manager (Java Swing)",
     description:
       "A Java Swing desktop application for managing contacts and groups, built as a university course project around an MVC architecture and a custom Observer/Observable mechanism.",
+    impact:
+      "Goal: apply MVC and a hand-built Observer/Observable pattern to a real, complete desktop app rather than a toy exercise — shipping every core flow, from create to search to grouping.",
     tech: ["Java", "Swing", "MVC", "Observer Pattern"],
     github: "https://github.com/Aliibrahim4p/contactmanager",
+    images: [
+      {
+        src: "/contactmanager-app.png",
+        alt: "Contact Manager Java Swing app showing the contact list and group management windows",
+      },
+    ],
     highlights: [
       {
         icon: AccountTreeIcon,
@@ -110,63 +130,92 @@ const OTHER_PROJECTS = [
       },
     ],
   },
+  {
+    title: "Gym Management System",
+    description:
+      "A fully responsive gym management platform built as a first-year web development academic project, with role-based interfaces for administrators, trainers, and clients.",
+    impact:
+      "Goal: cover a full gym's operations — scheduling, training, e-commerce, and communication — in a single first-year project, well beyond the typical course scope.",
+    tech: ["PHP", "JavaScript", "HTML/CSS", "AJAX", "PHPMailer"],
+    github: "https://github.com/Aliibrahim4p/GymApplication",
+    images: [
+      {
+        src: "/gymapp-schedule.png",
+        alt: "Gym Management System class schedule table",
+      },
+      {
+        src: "/gymap-store.png",
+        alt: "Gym Management System e-commerce store page",
+      },
+      {
+        src: "/gymapp-trainers.png",
+        alt: "Gym Management System trainers carousel",
+      },
+    ],
+    highlights: [
+      {
+        icon: CalendarMonthIcon,
+        title: "Class & session scheduling",
+        description:
+          "Gym class scheduling and personal training sessions across role-based views.",
+      },
+      {
+        icon: SupervisorAccountIcon,
+        title: "Role-based interfaces",
+        description:
+          "Separate admin, trainer, and client experiences for scheduling, training, and account management.",
+      },
+      {
+        icon: ShoppingCartIcon,
+        title: "Integrated store",
+        description:
+          "An e-commerce section for supplements and equipment, with cart and checkout flows.",
+      },
+      {
+        icon: EmailIcon,
+        title: "Automated email & AJAX",
+        description:
+          "PHPMailer-driven email notifications with AJAX-powered asynchronous interactions throughout.",
+      },
+    ],
+  },
 ];
 
-function PlaceholderGraphic() {
+function ImpactNote({ text }: { text: string }) {
   return (
-    <Box
+    <Stack
+      direction="row"
+      spacing={1.25}
       sx={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-        minHeight: 260,
+        alignItems: "flex-start",
+        mt: 3,
+        p: 1.5,
         borderRadius: 2,
-        border: "1px solid",
-        borderColor: "divider",
-        bgcolor: "#F4EFEA",
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-        p: 2,
+        bgcolor: "rgba(154, 75, 47, 0.07)",
       }}
     >
-      <Stack direction="row" spacing={0.75} sx={{ mb: 1.5 }}>
-        <Box sx={{ width: 8, height: 8, borderRadius: "50%", bgcolor: "#E0D5CC" }} />
-        <Box sx={{ width: 8, height: 8, borderRadius: "50%", bgcolor: "#E0D5CC" }} />
-        <Box sx={{ width: 8, height: 8, borderRadius: "50%", bgcolor: "#E0D5CC" }} />
-      </Stack>
-      <Stack direction="row" spacing={1.5} sx={{ flex: 1 }}>
-        <Stack spacing={1} sx={{ width: "35%" }}>
-          {[1, 2, 3, 4].map((i) => (
-            <Box
-              key={i}
-              sx={{ height: 14, borderRadius: 1, bgcolor: i === 1 ? "primary.main" : "#E7DED5", opacity: i === 1 ? 0.85 : 1 }}
-            />
-          ))}
-        </Stack>
-        <Stack spacing={1.5} sx={{ flex: 1 }}>
-          <Box sx={{ height: 44, borderRadius: 1, bgcolor: "#FFFFFF", border: "1px solid #E7DED5" }} />
-          <Stack direction="row" spacing={1.5} sx={{ flex: 1 }}>
-            <Box sx={{ flex: 1, borderRadius: 1, bgcolor: "#FFFFFF", border: "1px solid #E7DED5" }} />
-            <Box sx={{ flex: 1, borderRadius: 1, bgcolor: "#FFFFFF", border: "1px solid #E7DED5" }} />
-          </Stack>
-        </Stack>
-      </Stack>
-      <Typography
-        variant="caption"
-        sx={{
-          position: "absolute",
-          bottom: 10,
-          right: 14,
-          color: "text.secondary",
-          fontFamily: "var(--font-geist-mono), monospace",
-        }}
-      >
-        screenshots coming soon
+      <TrendingUpIcon sx={{ color: "primary.main", fontSize: 20, mt: "1px" }} />
+      <Typography variant="body2" sx={{ color: "text.secondary" }}>
+        {text}
       </Typography>
-    </Box>
+    </Stack>
   );
 }
+
+const COFFEE_SHOP_IMAGES = [
+  {
+    src: "/coffee_shop_dashboard.png",
+    alt: "Coffee Shop Management System daily sales dashboard mockup",
+  },
+  {
+    src: "/coffee_shop_pos_mockup_v2.png",
+    alt: "Coffee Shop Management System point-of-sale checkout screen mockup",
+  },
+  {
+    src: "/coffee_shop_inventory_entry.png",
+    alt: "Coffee Shop Management System inventory count screen mockup",
+  },
+];
 
 export default function Projects() {
   return (
@@ -225,6 +274,8 @@ export default function Projects() {
               ))}
             </Stack>
 
+            <ImpactNote text={IMPACT} />
+
             <Stack direction="row" spacing={1} useFlexGap sx={{ mt: 3, flexWrap: "wrap" }}>
               {TECH.map((tech) => (
                 <Chip key={tech} label={tech} size="small" variant="outlined" />
@@ -243,8 +294,8 @@ export default function Projects() {
             </Button>
           </Box>
 
-          <Box sx={{ order: { xs: 1, md: 2 } }}>
-            <PlaceholderGraphic />
+          <Box sx={{ order: { xs: 1, md: 2 }, minWidth: 0 }}>
+            <ProjectImages images={COFFEE_SHOP_IMAGES} mockLabel="mockup — not an actual screenshot" />
           </Box>
         </Paper>
 
@@ -256,62 +307,92 @@ export default function Projects() {
         </Typography>
 
         <Stack spacing={3} sx={{ mt: 3 }}>
-          {OTHER_PROJECTS.map((project) => (
-            <Paper
-              key={project.title}
-              variant="outlined"
-              sx={{ p: { xs: 3, sm: 4 }, borderRadius: 3 }}
-            >
-              <Typography variant="h3" sx={{ fontSize: "1.25rem" }}>
-                {project.title}
-              </Typography>
-              <Typography variant="body1" sx={{ mt: 1, color: "text.secondary", lineHeight: 1.7 }}>
-                {project.description}
-              </Typography>
+          {OTHER_PROJECTS.map((project) => {
+            const hasImages = project.images.length > 0;
+            const body = (
+              <Box>
+                <Typography variant="h3" sx={{ fontSize: "1.25rem" }}>
+                  {project.title}
+                </Typography>
+                <Typography variant="body1" sx={{ mt: 1, color: "text.secondary", lineHeight: 1.7 }}>
+                  {project.description}
+                </Typography>
 
-              <Box
-                sx={{
-                  mt: 3,
-                  display: "grid",
-                  gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)" },
-                  gap: 2,
-                }}
-              >
-                {project.highlights.map(({ icon: Icon, title, description }) => (
-                  <Stack key={title} direction="row" spacing={1.5} sx={{ alignItems: "flex-start" }}>
-                    <Icon sx={{ color: "primary.main", fontSize: 20, mt: "2px" }} />
-                    <Box>
-                      <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                        {title}
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                        {description}
-                      </Typography>
-                    </Box>
-                  </Stack>
-                ))}
-              </Box>
-
-              <Stack direction="row" spacing={1} useFlexGap sx={{ mt: 3, flexWrap: "wrap" }}>
-                {project.tech.map((tech) => (
-                  <Chip key={tech} label={tech} size="small" variant="outlined" />
-                ))}
-              </Stack>
-
-              {project.github && (
-                <Button
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  startIcon={<GitHubIcon />}
-                  sx={{ mt: 3 }}
-                  variant="text"
+                <Box
+                  sx={{
+                    mt: 3,
+                    display: "grid",
+                    gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)" },
+                    gap: 2,
+                  }}
                 >
-                  View on GitHub
-                </Button>
-              )}
-            </Paper>
-          ))}
+                  {project.highlights.map(({ icon: Icon, title, description }) => (
+                    <Stack key={title} direction="row" spacing={1.5} sx={{ alignItems: "flex-start" }}>
+                      <Icon sx={{ color: "primary.main", fontSize: 20, mt: "2px" }} />
+                      <Box>
+                        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                          {title}
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                          {description}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  ))}
+                </Box>
+
+                <ImpactNote text={project.impact} />
+
+                <Stack direction="row" spacing={1} useFlexGap sx={{ mt: 3, flexWrap: "wrap" }}>
+                  {project.tech.map((tech) => (
+                    <Chip key={tech} label={tech} size="small" variant="outlined" />
+                  ))}
+                </Stack>
+
+                {project.github && (
+                  <Button
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    startIcon={<GitHubIcon />}
+                    sx={{ mt: 3 }}
+                    variant="text"
+                  >
+                    View on GitHub
+                  </Button>
+                )}
+              </Box>
+            );
+
+            return (
+              <Paper
+                key={project.title}
+                variant="outlined"
+                sx={
+                  hasImages
+                    ? {
+                        p: { xs: 3, sm: 4 },
+                        borderRadius: 3,
+                        display: "grid",
+                        gridTemplateColumns: { xs: "1fr", md: "1.1fr 1fr" },
+                        gap: { xs: 3, md: 5 },
+                      }
+                    : { p: { xs: 3, sm: 4 }, borderRadius: 3 }
+                }
+              >
+                {hasImages ? (
+                  <>
+                    <Box sx={{ order: { xs: 2, md: 1 } }}>{body}</Box>
+                    <Box sx={{ order: { xs: 1, md: 2 }, minWidth: 0 }}>
+                      <ProjectImages images={project.images} />
+                    </Box>
+                  </>
+                ) : (
+                  body
+                )}
+              </Paper>
+            );
+          })}
         </Stack>
       </Container>
     </Box>

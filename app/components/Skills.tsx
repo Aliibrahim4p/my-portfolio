@@ -20,7 +20,7 @@ const GROUPS = [
   },
   {
     category: "Database & ORM",
-    skills: ["PostgreSQL", "Prisma (ORM)", "Redis"],
+    skills: ["PostgreSQL", "Prisma (ORM)", "MySql"],
   },
   {
     category: "Security & Auth",
@@ -49,6 +49,7 @@ const GROUPS = [
       "Winston",
       "CI/CD (GitHub Actions)",
       "Claude Code",
+      "Redis",
     ],
   },
 ];
