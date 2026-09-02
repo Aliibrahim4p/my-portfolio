@@ -37,7 +37,8 @@ export default function Hero() {
               color: "text.secondary",
             }}
           >
-            Passionate Computer Science student — open to full-stack opportunities
+            Hello there, I&apos;m Ali , I love solving problems and building
+            things that make a difference.
           </Typography>
         </Stack>
 
@@ -75,10 +76,10 @@ export default function Hero() {
             lineHeight: 1.7,
           }}
         >
-          I build complete systems end to end — from data models and APIs to the
-          interface on top . I&apos;d rather trace a bug to its root cause than
-          patch the symptom, and that&apos;s the kind of problem I actually
-          enjoy.
+          Im a CS student who loves to build complete systems end to end — from
+          talking to whoever's actually feeling the pain, through to deployment.
+          I&apos;d rather trace a bug to its root cause than patch the symptom,
+          and that&apos;s the kind of problem I actually enjoy.
         </Typography>
 
         <Stack
