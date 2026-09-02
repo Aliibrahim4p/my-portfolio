@@ -37,7 +37,7 @@ export default function Hero() {
               color: "text.secondary",
             }}
           >
-            Hello, I&apos;m Ali. I build complete systems end to end.
+            Passionate Computer Science student — open to full-stack opportunities
           </Typography>
         </Stack>
 
